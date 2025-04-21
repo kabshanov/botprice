@@ -1,0 +1,112 @@
+mysql -u bestprice_user -p bestprice
+
+
+Для проверки снаружи можно использовать:
+curl -I http://bestpriceweb.ru
+
+Пусть где конифг
+cd /etc/nginx/sites-enabled/
+
+Чтобы папку на сервер скачать
+scp -r "C:\bestpriceweb" root@217.114.11.131:/var/www/html/
+7jPaG)m7w(WU
+
+#deploy-sqlite.sh  3
+После копирования файлов на сервер, запустите скрипт развертывания: deploy-sqlite-optimized.sh
+cd /var/www/html/bestpriceweb
+chmod +x deploy-sqlite-fixed-v5.sh
+./deploy-sqlite-fixed-v5.sh
+
+Перезапустите сервер мини апп
+pm2 restart quick-price-api
+
+ Пересобираем Mini App после изменений:
+cd /var/www/html/bestpriceweb
+npm run build
+сли ты пересобирал проект, то процесс quick-price-api был удалён из PM2, и его нужно заново запустить.
+pm2 start /var/www/html/bestpriceweb/server/index-sqlite.mjs --name quick-price-api
+
+
+Файл загрузить, перед этим rm bot.py
+C:\Windows\System32\OpenSSH\scp.exe: failed to upload file C:/bot.py to /botprice/
+
+✅ 1. Проверяем, где ещё используется product_id
+grep -R "shared_data" /var/www/html/bestpriceweb/
+
+✅Перезагрузите Nginx:
+sudo nginx -t && sudo systemctl restart nginx
+
+✅Пересоберите проект ЕСЛИ НАДО:
+npm run build
+
+Введите путь к файлу SQLite (или оставьте пустым для создания нового): /root/botprice/my_database.db
+Будет использована существующая база данных: /root/botprice/my_database.db
+Копирование базы данных в директорию приложения...
+Создание тестового файла shared_data.py...
+Создание файла .env.production...
+Введите порт для API (обычно 3000): 3000
+Введите путь к файлу shared_data.py (или оставьте пустым для использования тестового файла): /root/botprice/shared_data.py
+Файл .env.production создан
+Настройка PM2 для API сервера...
+Установить PM2 глобально? (y/n): y
+
+Ввообще вот какие там есть поля для наших целей
+
+user_id это id пользователя когда в боте будет открываться mini app, там будут его товары (product_name) показываться
+brand
+country
+product_name
+model_group
+price
+supplier
+comment
+
+Как говорил ранее
+Мне надо чтобы он группы показаывал из shared_data.py,
+LIST_BRAND_GROUP = {
+"Apple": ["Apple Аксессуары", "Apple Airpods", "Apple Watch", "Apple iPhone", "Apple iPad", "Apple Mac"],
+"Android": ["Samsung Galaxy", "Xiaomi", "Google", "OnePlus", "Realme", "Honor", "Infinix", "Doogee"],
+"Dyson": ["Аудиотехника Dyson", "Аксессуары Dyson", "Стайлеры для волос Dyson", "Фены для волос Dyson",
+"Выпрямители для волос Dyson", "Пылесосы Dyson", "Системы очистки воздуха Dyson",
+"Сушилки для рук Dyson"],
+"Аудио": ["Яндекс", "JBL", "Beats", "Sony", "Marshall", "Galaxy Buds", "OnePlus Buds", "Redmi Buds", "Nothing Ear",
+"VK", "Аудио прочее"],
+"Консоли/VR": ["PlayStation", "Xbox", "Meta Quest", "Steam Deck"]
+}
+
+а уже конкретные товары в нем из mySQL
+
+Например товар iPad Pro 11” M2 2TB Gray Wi-Fi он будет входить в группу Apple, Apple iPad это поле brand, конкретный товар это product_name, страна это country, price это цена, поставщик это supplier и комментарий это comment поле соответственно из таблицы user_products в /root/botprice/my_database.db бьудет браться именно товар
+
+
+1. Установите зависимости: npm install express cors mysql2
+ * 2. Запустите сервер: node server/index.js
+
+
+ root@nlsqbaraob:~#
+root@nlsqbaraob:~# npm remove better-sqlite3 sqlite3
+
+up to date in 365ms
+root@nlsqbaraob:~# npm install express cors mysql2
+
+added 83 packages, and audited 84 packages in 6s
+
+15 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+root@nlsqbaraob:~# node server/index.js
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+
+Error: Cannot find module '/root/server/index.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v18.20.6

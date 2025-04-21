@@ -1,0 +1,70 @@
+ Архитектура проекта "Быстрый Прайс"
+📌 Полная схема взаимодействия компонентов
+[Пользователь Telegram] → [Бот] → [WebView] → [Frontend]
+                                ↓             ↓
+                                [Nginx] ↔ [Backend API] ↔ [SQLite]
+
+ 🔧 Инфраструктура (DevOps)
+Стек технологий:
+Сервер: Ubuntu 22.04 LTS
+Web Server: Nginx 1.24 + Let's Encrypt
+Process Manager: PM2 5.3
+Мониторинг: NetData
+🔑 Ключевые особенности:
+HTTPS через Certbot
+Load balancing для API
+Автоматическое восстановление сервисов
+
+
+🛠️ Backend (Node.js Developer)
+Основные модули:
+API: Express.js + TypeScript
+База данных: SQLite3 с Knex.js
+Роуты: /api/products, /api/health
+Мидлвари: CORS, Rate Limiter
+🔐 Безопасность:
+Валидация user_id
+SQL-инъекции: параметризованные запросы
+HTTPS-only соединения
+
+соединения
+🎨 Frontend (React Specialist)
+Структура проекта:
+Ядро: React 18 + Vite
+Состояние: Zustand
+Стили: Tailwind CSS 3
+Telegram WebApp SDK
+📱 Особенности Mini App:
+Адаптивный дизайн
+Оффлайн-кэширование
+Динамическая подгрузка данных
+
+
+
+🔗 Полный поток данных
+Пользователь → /catalog → Telegram Bot
+Бот → WebView URL → Пользовательский клиент
+WebView → initData → user_id → API
+API → SQLite → Категории/Товары → WebView
+WebView → Рендеринг → Пользователь
+
+
+🛠️ Полезные команды (SysAdmin + Developer)
+API Management
+pm2 logs quick-price-api --lines 100 curl -X GET "http://localhost:3000/api/health" npx knex migrate:latest
+
+Database Operations
+sqlite3 /root/botprice/my_database.db "SELECT * FROM user_products;" sqlite3 .dump > backup.sql EXPLAIN QUERY PLAN SELECT * FROM user_products WHERE user_id=?
+
+Frontend Debugging
+npm run build -- --profile npx lighthouse https://bestpriceweb.ru --view curl -I https://bestpriceweb.ru/assets/index-MQrtxYnd.js
+
+Server Maintenance
+sudo netstat -tulpn | grep :3000 sudo ss -ltnp | grep nginx journalctl -u nginx --since "10 minutes ago"
+
+🚨 Чек-лист развертывания (Lead Developer)
+Обновить зависимости: npm ci --production
+Собрать фронтенд: npm run build
+Применить миграции БД: npx knex migrate:latest
+Перезапустить сервисы: pm2 reload all
+Проверить здоровье: curl -I https://bestpriceweb.ru/api/health

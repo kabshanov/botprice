@@ -1,0 +1,29 @@
+***SQL***
+   oracule SQL
+  baker22.92@mail.ru
+  Misha2803122227!
+
+MySQL User Name: bestprice_user
+Host: localhost
+Password: your_secure_password (замени на свой пароль)
+Role: DB Admin (или DB Owner)
+
+Запуск MySQL вручную через полный пут на компе
+& "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -u bestprice_user -p
+
+
+На сервере
+Открываем MySQL консоль на сервере:
+mysql -u bestprice_user -p
+
+Проверяем, какие базы данных есть:
+SHOW DATABASES;
+
+ Выбираем базу данных и смотрим таблицы:
+USE bestprice;SHOW TABLES;
+
+Как выйти из MySQL?
+ EXIT;
+
+
+
