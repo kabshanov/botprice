@@ -33,7 +33,7 @@ from currency_api import BinanceAPI
 import logging
 logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s',
-    level=logging.DEBUG, #⚠️⚠️
+    level=logging.WARNING, #⚠️⚠️
     datefmt='%H:%M'
 )
 # Отключение избыточных логов библиотеки httpx
