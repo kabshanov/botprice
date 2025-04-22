@@ -3518,7 +3518,8 @@ COMPLEX_BRANDS = [
     "Meta Quest",
     "Valve Steam Deck",
     "Nintendo",
-    "GoPro"
+    "GoPro",
+    "Insta360"
 ]
 
 #  Список слов паттернов для поиска в конкретном бренде
@@ -3609,7 +3610,8 @@ PATTERNS_FOR_COMPLEX_BRAND_SEARCH = {
     "Meta Quest" : ["Meta Quest"],
     "Valve Steam Deck" : ["Steam Deck"],
     "Nintendo" : ["Nintendo", "Switch"],
-    "GoPro" : ["GoPro"]
+    "GoPro" : ["GoPro"],
+    "Insta360" : ["Insta360", "Insta 360", "insta360°"]
 }
 
 #Список обеденных brand
@@ -3622,7 +3624,7 @@ LIST_BRAND_GROUP = {
     "Аудио" : ["Яндекс", "JBL", "Beats", "Sony", "Marshall", "Galaxy Buds", "OnePlus Buds", "Redmi Buds", "Nothing Ear",
                "VK", "Аудио прочее"],
     "Консоли/VR" : ["PlayStation", "Xbox", "Meta Quest", "Steam Deck", "Nintendo"],
-    "Фото и видео" : ["GoPro"]
+    "Фото и видео" : ["GoPro", "Insta360"]
 }
 
 # Библиотека товаров
@@ -11919,6 +11921,245 @@ PRODUCT_LIBRARY = {
                         "Accessory Bundle" : ["Accessory Bundle"],
                         "with 64 SD" : ["with 64 SD", "with 64 SD Card"]
 
+                    },
+                },
+            },
+        },
+    },
+    "Insta360" : {
+        "Экшн-камера Insta360" : {
+            "aliases" : [
+                "Insta360", "Insta 360", "insta360°"
+            ],
+            "attributes" : {
+                "insta" : {
+                    "aliases" : {
+                        "Insta360" : ["Insta360", "Insta 360", "insta360°"],
+                    },
+                },
+                "version" : {
+                    "aliases" : {
+                        "X4" : ["X4"],
+                        "X3" : ["X3 "],
+                        "ONE X2" : ["ONE X2"],
+                        "ONE RS " : ["ONE RS "],
+                        "GO 3" : ["GO 3"],
+                        "GO 3S" : ["GO 3S"],
+                        "Ace Pro" : ["Ace Pro"],
+                        "Ace Pro 2" : ["Ace Pro 2"],
+                    },
+                },
+                "SSD" : {
+                    "aliases" : {
+                        "32" : ["32GB"],
+                        "64" : ["64GB"],
+                        "128" : ["128GB"],
+
+                    },
+                },
+                "color" : {
+                    "aliases" : {
+                        "Black" : ["Black"],
+                        "White" : ["White"],
+                    },
+                },
+                "add" : {
+                    "aliases" : {
+                        "Adventure Bundle" : ["Adventure Bundle", "Adventure Action Camera"],
+                        "Creator Kit" : ["Creator Kit"],
+                        "Vlog Kit" : ["Vlog Kit"],
+                        "Motorcycle Kit" : ["Motorcycle Kit"],
+                        "Bike Bundle" : ["Bike Bundle"],
+                        "Snow Bundle" : ["Snow Bundle"],
+                        "Ski Kit" : ["Ski Kit"],
+                        "Professional Kit" : ["Professional Kit"],
+                        "1-Inch Bundle" : ["1-Inch Bundle"],
+                        "Stand Alone" : ["Stand Alone"],
+                        "Base Kit" : ["Base Kit"],
+                        "2 АКБ" : ["2 АКБ"]
+                    },
+                },
+            },
+        },
+        "Аксессуары Insta360" : {
+            "aliases" : [
+                "Selfie Stick", "Mini 2 in 1 Tripod", "Flow Pro Gray", "Flow Pro White", "Flow White", "Flow Gray",
+                "Flow 2 Pro White", "Flow 2 Pro Gray", "Flow Pro 2 White", "Flow Pro 2 Gray", "Mini 2-in-1 Tripod + Selfie Stick",
+                "Extended Edition Selfie Stick 300 см", "Extended Edition Selfie Stick 500 см", "Bullet Time Cord",
+                "Bullet Time Handle + Tripod", "Helmet Mount Bundle", "Chest Strap Mount", "Back Bar Mount",
+                "Suction Cup Car Mount", "Clamp Mount", "Handlebar Mount", "All-purpose Tripod",
+                "Invisible Cold Shoe", "Quick Reader", "Mount Adapter Bundle", "Charging Hub",
+                "Additional Battery Base", "Boosted Battery Base", "Power Selfie Stick", "Fast Charging Hub for GO 3/3S",
+                "Mic Adapter", "Directional Mic", "Cold Shoe Adapter", "External Mic Mount", "Magnetic Light Mod",
+                "Lens Guards", "Sticky Lens Guards", "Dive Case", "Carrying Case", "Travel Case",
+                "Screen Protector", "GPS Action Remote", "AI-powered Smart Remote", "Magnetic Pendant", "Quick Release Mount"
+            ],
+            "attributes" : {
+                "insta" : {
+                    "aliases" : {
+                        "Insta360" : ["Insta360", "Insta 360", "insta360°"],
+                    },
+                },
+                "accessories": {
+                    "aliases": {
+                        "Invisible Selfie Stick 70 см": [
+                            "Invisible Selfie Stick 70cm",
+                            "Invisible Selfie Stick 70 cm",
+                            "Invisible Selfie Stick 70см",
+                            "Invisible Selfie Stick 70 см"
+                        ],
+                        "Invisible Selfie Stick 85 см": [
+                            "Invisible Selfie Stick 85cm",
+                            "Invisible Selfie Stick 85 cm",
+                            "Invisible Selfie Stick 85см",
+                            "Invisible Selfie Stick 85 см"
+                        ],
+                        "Invisible Selfie Stick 114 см": [
+                            "Invisible Selfie Stick 114cm",
+                            "Invisible Selfie Stick 114 cm",
+                            "Invisible Selfie Stick 114см",
+                            "Invisible Selfie Stick 114 см"
+                        ],
+                        "Invisible Selfie Stick 120 см": [
+                            "Invisible Selfie Stick 120cm",
+                            "Invisible Selfie Stick 120 cm",
+                            "Invisible Selfie Stick 120см",
+                            "Invisible Selfie Stick 120 см"
+                        ],
+                        "Invisible Selfie Stick 300 см": [
+                            "Invisible Selfie Stick 300cm",
+                            "Invisible Selfie Stick 300 cm",
+                            "Invisible Selfie Stick 300см",
+                            "Invisible Selfie Stick 300 см"
+                        ],
+                        "Invisible Selfie Stick 500 см": [
+                            "Invisible Selfie Stick 500cm",
+                            "Invisible Selfie Stick 500 cm",
+                            "Invisible Selfie Stick 500см",
+                            "Invisible Selfie Stick 500 см"
+                        ],
+                        "Mini 2-in-1 Tripod + Selfie Stick": [
+                            "Mini 2-in-1 Tripod + Selfie Stick",
+                            "Selfie Stick Mini 2 in 1 Tripod",
+                            "Mini 2-in-1 Tripod"
+                        ],
+                        "Extended Edition Selfie Stick 300 см": [
+                            "Extended Edition Selfie Stick 300cm",
+                            "Extended Edition Selfie Stick 300 cm",
+                            "Extended Selfie Stick 300cm",
+                            "Extended Selfie Stick 300 см"
+                        ],
+                        "Extended Edition Selfie Stick 500 см": [
+                            "Extended Edition Selfie Stick 500cm",
+                            "Extended Edition Selfie Stick 500 cm",
+                            "Extended Selfie Stick 500cm",
+                            "Extended Selfie Stick 500 см"
+                        ],
+                        "Flow Pro Gray" : ["Flow Pro Gray"],
+                        "Flow Pro White" : ["Flow Pro White"],
+                        "Flow White" : ["Flow White"],
+                        "Flow Gray" : ["Flow Gray"],
+                        "Flow 2 Pro White": ["Flow 2 Pro White"],
+                        "Flow 2 Pro Gray": ["Flow 2 Pro Gray"],
+                        "Flow Pro 2 White": ["Flow Pro 2 White"],
+                        "Flow Pro 2 Gray": ["Flow Pro 2 Gray"],
+                        "Bullet Time Cord": [
+                            "Bullet Time Cord"
+                        ],
+                        "Bullet Time Handle + Tripod": [
+                            "Bullet Time Handle + Tripod"
+                        ],
+                        "Helmet Mount Bundle": [
+                            "Helmet Mount Bundle"
+                        ],
+                        "Chest Strap Mount": [
+                            "Chest Strap Mount"
+                        ],
+                        "Back Bar Mount": [
+                            "Back Bar Mount"
+                        ],
+                        "Suction Cup Car Mount": [
+                            "Suction Cup Car Mount"
+                        ],
+                        "Clamp Mount": [
+                            "Clamp Mount"
+                        ],
+                        "Handlebar Mount": [
+                            "Handlebar Mount"
+                        ],
+                        "All-purpose Tripod": [
+                            "All-purpose Tripod",
+                            "All purpose Tripod"
+                        ],
+                        "Invisible Cold Shoe": [
+                            "Invisible Cold Shoe"
+                        ],
+                        "Quick Reader": [
+                            "Quick Reader"
+                        ],
+                        "Mount Adapter Bundle": [
+                            "Mount Adapter Bundle"
+                        ],
+                        "Charging Hub": [
+                            "Charging Hub"
+                        ],
+                        "Additional Battery Base": [
+                            "Additional Battery Base"
+                        ],
+                        "Boosted Battery Base": [
+                            "Boosted Battery Base"
+                        ],
+                        "Power Selfie Stick": [
+                            "Power Selfie Stick"
+                        ],
+                        "Fast Charging Hub for GO 3/3S": [
+                            "Fast Charging Hub for GO 3/3S"
+                        ],
+                        "Mic Adapter": [
+                            "Mic Adapter"
+                        ],
+                        "Directional Mic": [
+                            "Directional Mic"
+                        ],
+                        "Cold Shoe Adapter": [
+                            "Cold Shoe Adapter"
+                        ],
+                        "External Mic Mount": [
+                            "External Mic Mount"
+                        ],
+                        "Magnetic Light Mod": [
+                            "Magnetic Light Mod"
+                        ],
+                        "Lens Guards": [
+                            "Lens Guards"
+                        ],
+                        "Sticky Lens Guards": [
+                            "Sticky Lens Guards"
+                        ],
+                        "Dive Case": [
+                            "Dive Case"
+                        ],
+                        "Carrying Case": [
+                            "Carrying Case"
+                        ],
+                        "Travel Case": [
+                            "Travel Case"
+                        ],
+                        "Screen Protector": [
+                            "Screen Protector"
+                        ],
+                        "GPS Action Remote": [
+                            "GPS Action Remote"
+                        ],
+                        "AI-powered Smart Remote": [
+                            "AI-powered Smart Remote"
+                        ],
+                        "Magnetic Pendant": [
+                            "Magnetic Pendant"
+                        ],
+                        "Quick Release Mount": [
+                            "Quick Release Mount"
+                        ]
                     },
                 },
             },

@@ -911,6 +911,49 @@ def sort_key_tecno_mobile(product_name: str) -> tuple:
     rom = parse_memory_gb(name_lower)
     return (cat, rom, name_lower)
 
+def sort_key_insta360(product_name: str) -> tuple:
+    """
+    Сортировка Insta360:
+      0) Бюджет (GO 3 / GO 3S)
+      1) Средний уровень (ONE X2 / X3)
+      2) Выше среднего (X4)
+      3) Премиум-экшн (Ace Pro / Ace Pro 2) — внутри этого сегмента: Black → 2 → остальные
+      4) Профи (ONE RS 1-Inch 360 Edition)
+      5) Модульные (ONE RS / ONE R)
+      6) Остальные
+    Затем — лексикографически.
+    """
+    name = product_name.lower()
+
+    # определяем сегмент
+    if re.search(r'\bgo\s*3s?\b', name):
+        cat = 0
+    elif re.search(r'\bone\s*x2\b', name) or re.search(r'\bx3\b', name):
+        cat = 1
+    elif re.search(r'\bx4\b', name):
+        cat = 2
+    elif re.search(r'\bace\s*pro\b', name):  # включает и Ace Pro 2
+        cat = 3
+    elif re.search(r'\bone\s*rs\s*1[-–]inch\s*360\s*edition\b', name):
+        cat = 4
+    elif re.search(r'\bone\s*rs\b', name) or re.search(r'\bone\s*r\b', name):
+        cat = 5
+    else:
+        cat = 6
+
+    # для премиум‑экшн (cat==3) вводим субкатегорию:
+    if cat == 3:
+        # варианты: Black → 2 → всё остальное
+        if 'black' in name:
+            sub = 0
+        elif re.search(r'\b2\b', name):
+            sub = 1
+        else:
+            sub = 2
+        return (cat, sub, name)
+
+    return (cat, name)
+
 # ------------------------------------
 
 # Словарь для остальных специальных брендов (без Xiaomi, у которого своя логика с model_group)
@@ -923,7 +966,8 @@ SPECIAL_SORTING_BRAND = {
     "samsung galaxy" : sort_key_samsung_galaxy,
     "пылесосы dyson" : sort_dyson_clear,
     "аксессуары dyson" : sort_dyson_accessories,
-    "tecno mobile" : sort_key_tecno_mobile
+    "tecno mobile" : sort_key_tecno_mobile,
+    "insta360" : sort_key_insta360
     # Если потребуется добавить ещё бренды…
 }
 

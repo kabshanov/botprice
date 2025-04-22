@@ -2329,6 +2329,23 @@ def handle_complex_brand(
             if handled:
                 return True  # Возвращаем результат вызова функции
 
+        elif brand_candidate == "Insta360":
+            from utils_brand.insta360_utils import handle_complex_insta360
+            # "Ленивый" импорт, чтобы избежать циклических импортов.
+            logger.debug("[handle_complex_insta360] Вызываем handle_complex_insta360...")
+            handled = handle_complex_insta360(
+                line=line,
+                cleaned_line=cleaned_line,
+                countries=countries,
+                price=price,
+                supplier=supplier,
+                comment=comment,
+                user_id=user_id
+            )
+            logger.debug(f"[handle_complex_brand] handle_complex_insta360 вернул {handled}")
+            if handled:
+                return True  # Возвращаем результат вызова функции
+
         elif brand_candidate == "Tecno Mobile":
             from utils_brand.tecno_utils import handle_complex_tecno
             # "Ленивый" импорт, чтобы избежать циклических импортов.
