@@ -445,7 +445,6 @@ MINIMUM_PRICE_FOR_BRAND = {
     "Пылесосы Dyson" : 20000,
     "Системы очистки воздуха Dyson" : 20000,
     "Сушилки для рук Dyson" : 100000,
-    "Аксессуары Dyson" : 10000,
     "Samsung Galaxy" : 3000,
     "Marshall" : 3000
 }
@@ -461,7 +460,9 @@ FIRST_WORDS_PATTERNS_STRING_NOT_APPLY_TO_PRODUCT = [
     "Гравировка",
     "📍💻Гравировка",
     "💻Гравировка",
-    "Гарантия"
+    "Гарантия",
+    "Цены актуальны на",
+    "Прайс"
 ]
 
 CODES_NO_PRICE = {
@@ -3519,7 +3520,8 @@ COMPLEX_BRANDS = [
     "Valve Steam Deck",
     "Nintendo",
     "GoPro",
-    "Insta360"
+    "Insta360",
+    "DJI Osmo"
 ]
 
 #  Список слов паттернов для поиска в конкретном бренде
@@ -3611,7 +3613,8 @@ PATTERNS_FOR_COMPLEX_BRAND_SEARCH = {
     "Valve Steam Deck" : ["Steam Deck"],
     "Nintendo" : ["Nintendo", "Switch"],
     "GoPro" : ["GoPro"],
-    "Insta360" : ["Insta360", "Insta 360", "insta360°"]
+    "Insta360" : ["Insta360", "Insta 360", "insta360°"],
+    "DJI Osmo" : ["DJI Osmo"]
 }
 
 #Список обеденных brand
@@ -3624,7 +3627,7 @@ LIST_BRAND_GROUP = {
     "Аудио" : ["Яндекс", "JBL", "Beats", "Sony", "Marshall", "Galaxy Buds", "OnePlus Buds", "Redmi Buds", "Nothing Ear",
                "VK", "Аудио прочее"],
     "Консоли/VR" : ["PlayStation", "Xbox", "Meta Quest", "Steam Deck", "Nintendo"],
-    "Фото и видео" : ["GoPro", "Insta360"]
+    "Фото и видео" : ["GoPro", "Insta360", "DJI Osmo"]
 }
 
 # Библиотека товаров
@@ -9791,25 +9794,6 @@ PRODUCT_LIBRARY = {
             ],
             "attributes" : {
                 "color" : {
-                    "values" : [
-                        "Nickel/Copper",
-                        "Prussian Blue/Rich Copper",
-                        "Prussian Blue/Copper",
-                        "Strawberry Bronze/Blush Pink",
-                        "Black/Purple",
-                        "Blue/Copper",
-                        "Blue/Blush",
-                        "Ceramic Patina/Topaz",
-                        "Vinca Blue/Topaz",
-                        "Vinca Blue/Rose",
-                        "Velvet Red/Gold",
-                        "Sakura Rose Gold",
-                        "Fuchsia/Nickel",
-                        "Ceramic Pop",
-                        "Black Onyx/Gold",
-                        "Blush Blue",
-                        "Ceramic Pink/Rose Gold"
-                    ],
                     "aliases" : {
                         "Nickel/Copper" : ["Nickel/Copper", "Nickel / Copper", "Nickel Copper", "Nickel"],
                         "Prussian Blue/Rich Copper" : ["Prussian Blue/Rich Copper", "Prussian Blue Rich Copper", "Rich Copper"],
@@ -9819,14 +9803,15 @@ PRODUCT_LIBRARY = {
                         "Blue/Copper" : ["Blue/Copper", "Blue Copper", "Blue/Cooper", "Blue Cooper"],
                         "Blue/Blush" : ["Blue/Blush", "Blush/Blue", "Blue Blush", "Blush Blue", "blash blue", "Blue blash"],
                         "Ceramic Patina/Topaz" : ["Ceramic Patina/Topaz", "Ceramic Patina", "Ceramic Topaz", "Patina/Topaz", "Patina Topaz"],
-                        "Vinca Blue/Topaz" : ["Vinca Blue/Topaz", "Vincia blue /Topaz", "Blue/Topaz", "Vincia blue / Topaz", "blue /Topaz", "blue/ Topaz", "blue/ Topaz", "blue Topaz"],
+                        "Vinca Blue/Topaz" : ["Vinca Blue/Topaz", "Vincia blue /Topaz", "Blue/Topaz", "Vincia blue / Topaz", "blue /Topaz", "blue/ Topaz", "blue/ Topaz", "blue Topaz", "Vinca Blue"],
                         "Vinca Blue/Rose" : ["Vinca Blue/Rose", "Vincia blue /rose", "Vincia blue / rose", "blue /rose", "blue/ rose", "blue/ rose", "blue rose"],
                         "Velvet Red/Gold" : ["Velvet Red/Gold", "Velvet Red Gold", "Red/Gold", "Red Gold", "Velvet"],
                         "Sakura Rose Gold" : ["Sakura Rose Gold", "Rose Gold", "Rose/Gold", "Sakura"],
                         "Fuchsia/Nickel" : ["Fuchsia/Nickel", "Fuchsia Nickel", "Fuchsia"],
                         "Ceramic Pop" : ["Ceramic Pop", "Pop"],
                         "Black Onyx/Gold" : ["Black Onyx/Gold", "Gold Onyx", "Gold"],
-                        "Ceramic Pink/Rose Gold" : ["Ceramic Pink/Rose Gold", "Ceramic Pink", "Pink/Rose", "Pink Rose"]
+                        "Ceramic Pink/Rose Gold" : ["Ceramic Pink/Rose Gold", "Ceramic Pink", "Pink/Rose", "Pink Rose"],
+                        "Jasper Plum" : ["Jasper Plum", "Jasper"]
                     },
                 },
                 "dryer" : {
@@ -10620,7 +10605,7 @@ PRODUCT_LIBRARY = {
         "Акустические системы JBL" : {
             "aliases" : [
                 "JBL Go", "JBL Clip", "JBL Charge", "JBL Xtreme", "Clip", "JBL PartyBox", "Partybox", "JBL JR POP",
-                "JBL Boombox", "PartyBox", "JBL Pulse", "JBL Wind", "JBL Tuner"
+                "JBL Boombox", "PartyBox", "JBL Pulse", "JBL Wind", "JBL Tuner", "Boombox"
             ],
             "attributes" : {
                 "version" : {
@@ -11093,14 +11078,14 @@ PRODUCT_LIBRARY = {
         "Акустические системы Marshall" : {
             "aliases" : ["Marshall Acton", "Marshall Stanmore", "Marshall Woburn", "Marshall Kilburn",
                          "Marshall Stockwell", "Marshall Tufton", "Marshall Emberton", "Marshall Willen",
-                         "Marshall Middleton"],
+                         "Marshall Middleton", "Acton", "Stanmore"],
             "attributes" : {
                 "version" : {
                     "aliases" : {
                         "Marshall Acton II" : ["Marshall Acton II", "Marshall Acton 2"],
-                        "Marshall Acton III" : ["Marshall Acton III", "Marshall Acton 3"],
-                        "Marshall Stanmore II" : ["Marshall Stanmore II", "Marshall Stanmore 2"],
-                        "Marshall Stanmore III" : ["Marshall Stanmore III", "Marshall Stanmore 3"],
+                        "Marshall Acton III" : ["Marshall Acton III", "Marshall Acton 3", "Acton 3"],
+                        "Marshall Stanmore II" : ["Marshall Stanmore II", "Marshall Stanmore 2", "Stanmore 2"],
+                        "Marshall Stanmore III" : ["Marshall Stanmore III", "Marshall Stanmore 3", "Stanmore 3"],
                         "Marshall Woburn II" : ["Marshall Woburn II", "Marshall Woburn 2"],
                         "Marshall Woburn III" : ["Marshall Woburn III", "Marshall Woburn 3"],
                         "Marshall Kilburn II" : ["Marshall Kilburn II", "Marshall Kilburn 2"],
@@ -11695,7 +11680,7 @@ PRODUCT_LIBRARY = {
                                                 "PS Portal"]
                     },
                 },
-                "coloracs" : {
+                "colors" : {
                     "aliases" : {
                         "White" : ["White", "⚪️"],
                         "Black" : ["Black", "⚫️"],
@@ -11712,7 +11697,7 @@ PRODUCT_LIBRARY = {
             "attributes" : {
                 "dualsense" : {
                     "aliases" : {
-                        "DualSense" : ["DualSense", "DualSense™", "Dualsence"],
+                        "DualSense" : ["DualSense", "DualSense™", "Dualsence",],
                     },
                 },
                 "consoles" : {
@@ -11734,6 +11719,9 @@ PRODUCT_LIBRARY = {
                         "Silver" : ["Silver"],
                         "Chrome Pearl" : ["Chrome Pearl", "Pearl"],
                         "Chrome Indigo" : ["Chrome Indigo", "Indigo"],
+                        "Volcanic red" : ["Volcanic red"],
+                        "Chroma Tea" : ["Chroma Tea"],
+                        "Sterling Silver" : ["Sterling Silver"],
                         "Edge" : ["Edge"]
                     },
                 },
@@ -11903,16 +11891,9 @@ PRODUCT_LIBRARY = {
                 },
                 "version" : {
                     "aliases" : {
-                        "HERO" : ["HERO"],
-                        "Army" : ["Army "]
-                    },
-                },
-                "number" : {
-                    "aliases" : {
-                        "12" : ["12"],
-                        "13" : ["13"],
+                        "HERO12" : ["12", "HERO12", "HERO 12"],
+                        "HERO13" : ["13", "HERO13", "HERO 13"],
                         "4K" : ["4K"],
-                        "2.0" : ["2.0 (3-Way Refresh)", "2.0 (3-Way Refresh", "2.0"]
                     },
                 },
                 "add" : {
@@ -11921,6 +11902,25 @@ PRODUCT_LIBRARY = {
                         "Accessory Bundle" : ["Accessory Bundle"],
                         "with 64 SD" : ["with 64 SD", "with 64 SD Card"]
 
+                    },
+                },
+            },
+        },
+        "Аксессуары GoPro" : {
+            "aliases" : [
+                "GoPro Army", "Removable Instrument Mount"
+            ],
+            "attributes" : {
+                "console" : {
+                    "aliases" : {
+                        "GoPro Army" : ["GoPro Army"],
+                        "GoPro Removable" : ["Removable"]
+                    },
+                },
+                "add" : {
+                    "aliases" : {
+                        "2.0 (3-Way Refresh)" : ["2.0 (3-Way Refresh)", "2.0 (3-Way Refresh)", "2.0"],
+                        "Instrument Mount" : ["Instrument Mount"]
                     },
                 },
             },
@@ -12160,6 +12160,51 @@ PRODUCT_LIBRARY = {
                         "Quick Release Mount": [
                             "Quick Release Mount"
                         ]
+                    },
+                },
+            },
+        },
+    },
+    "DJI Osmo" : {
+        "Экшн-камера DJI Osmo" : {
+            "aliases" : [
+                "DJI Osmo Action", "DJI Osmo Pocket"
+            ],
+            "attributes" : {
+                "console" : {
+                    "aliases" : {
+                        "DJI Osmo Pocket" : ["DJI Osmo Pocket"],
+                        "DJI Osmo Action" : ["DJI Osmo Action"]
+                    },
+                },
+                "version" : {
+                    "aliases" : {
+                        "3" : ["3"],
+                        "4" : ["4 "],
+                        "5 Pro" : ["5 Pro"]
+                    },
+                },
+                "add" : {
+                    "aliases" : {
+                        "Standard Combo" : ["Standard"],
+                        "Creator Combo" : ["Creator"],
+                        "Adventure Combo" : ["Adventure"],
+                        "Vlog Combo" : ["Vlog"]
+                    },
+                },
+            },
+        },
+        "Стабилизаторы DJI Osmo" : {
+            "aliases" : [
+                "DJI Osmo Mobile"
+            ],
+            "attributes" : {
+                "console" : {
+                    "aliases" : {
+                        "DJI Osmo Mobile 6" : ["DJI Osmo Mobile 6"],
+                        "DJI Osmo Mobile SE" : ["DJI Osmo Mobile SE"],
+                        "DJI Osmo Mobile 7" : ["DJI Osmo Mobile 7"],
+                        "DJI Osmo Mobile 7P" : ["DJI Osmo Mobile 7P"]
                     },
                 },
             },

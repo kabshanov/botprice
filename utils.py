@@ -26,7 +26,7 @@ from shared_data import (
 # ---------------------- НАСТРОЙКА ЛОГИРОВАНИЯ -------------------------------------
 
 logging.basicConfig(
-    level=logging.WARNING,
+    level=logging.DEBUG,
     format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
     handlers=[
         logging.StreamHandler()
@@ -362,6 +362,7 @@ def normalize_product_name(product_name: str) -> str:
         'jblwind' : 'jbl wind',
         'jbllive' : 'jbl live',
         'jbl детские' : 'jbl jr',
+        'bl tune' : 'jbl tune',
 
         'quite comfort' : 'quiet comfort',
         'b&w' : 'bowers & wilkins',
@@ -2360,6 +2361,23 @@ def handle_complex_brand(
                 user_id=user_id
             )
             logger.debug(f"[handle_complex_brand] handle_complex_tecno вернул {handled}")
+            if handled:
+                return True  # Возвращаем результат вызова функции
+
+        elif brand_candidate == "DJI Osmo":
+            from utils_brand.dji_osmo_utils import handle_complex_dji_osmo
+            # "Ленивый" импорт, чтобы избежать циклических импортов.
+            logger.debug("[handle_complex_dji_osmo] Вызываем handle_complex_dji_osmo...")
+            handled = handle_complex_dji_osmo(
+                line=line,
+                cleaned_line=cleaned_line,
+                countries=countries,
+                price=price,
+                supplier=supplier,
+                comment=comment,
+                user_id=user_id
+            )
+            logger.debug(f"[handle_complex_brand] handle_complex_dji_osmo вернул {handled}")
             if handled:
                 return True  # Возвращаем результат вызова функции
 

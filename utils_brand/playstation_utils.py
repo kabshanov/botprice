@@ -145,39 +145,45 @@ def handle_playstation_product(
     extracted_attributes = parse_playstation_product(cleaned_line, model)
     has_special_alias = ("final_product_name" in extracted_attributes)
 
+    if model.lower() == "консоли playstation" and price < 30000 :
+        logger.info(
+            f"[handle_playstation_product] Цена {price} <30k для консоли. Отбрасываем."
+        )
+        return False
+
     if not has_special_alias :
         required_attrs_mapping = {
             "консоли playstation" : {"console", "number", "version"},
             "контроллеры playstation" : {"dualsense", "consoles", "colors"},
             "playstation vr" : {"vr"},
-            "аксессуары playstation" : {"acs", "coloracs"},
+            "аксессуары playstation" : {"acs", "colors"},
         }
         required_attrs = required_attrs_mapping.get(model.lower(), set())
 
-        # Блок 1: Если acs равен "PlayStation Portal", атрибут coloracs не требуется.
+        # Блок 1: Если acs равен "PlayStation Portal", атрибут colors не требуется.
         if (model.lower() == "аксессуары playstation" and
                 extracted_attributes.get("acs", "").strip().lower() == "playstation portal".lower()) :
-            required_attrs.discard("coloracs")
-            logger.debug("[handle_playstation_product] Для 'PlayStation Portal' не требуется атрибут coloracs")
-            if "coloracs" in extracted_attributes :
-                del extracted_attributes["coloracs"]
+            required_attrs.discard("colors")
+            logger.debug("[handle_playstation_product] Для 'PlayStation Portal' не требуется атрибут colors")
+            if "colors" in extracted_attributes :
+                del extracted_attributes["colors"]
                 logger.debug(
-                    "[handle_playstation_product] Найденный атрибут 'coloracs' удалён для 'PlayStation Portal'")
+                    "[handle_playstation_product] Найденный атрибут 'colors' удалён для 'PlayStation Portal'")
 
-        # Блок 2: Если acs равен одному из заданных наушников, то для coloracs допускаются только "White", "Black" или "Camouflage".
+        # Блок 2: Если acs равен одному из заданных наушников, то для colors допускаются только "White", "Black" или "Camouflage".
         if (model.lower() == "аксессуары playstation" and
                 extracted_attributes.get("acs", "").strip() in {"Наушники Sony Pulse 3D", "Наушники Sony Elite",
                                                                 "Наушники Sony Explore"}) :
-            allowed_coloracs = {"White", "Black", "Camouflage"}
-            if "coloracs" in extracted_attributes :
-                if extracted_attributes["coloracs"] not in allowed_coloracs :
+            allowed_colors = {"White", "Black", "Camouflage"}
+            if "colors" in extracted_attributes :
+                if extracted_attributes["colors"] not in allowed_colors :
                     logger.debug(
-                        f"[handle_playstation_product] Значение 'coloracs' ('{extracted_attributes['coloracs']}') недопустимо для '{extracted_attributes.get('acs')}', удаляем его.")
-                    del extracted_attributes["coloracs"]
-            if "coloracs" not in extracted_attributes :
-                extracted_attributes["coloracs"] = "White"
+                        f"[handle_playstation_product] Значение 'colors' ('{extracted_attributes['colors']}') недопустимо для '{extracted_attributes.get('acs')}', удаляем его.")
+                    del extracted_attributes["colors"]
+            if "colors" not in extracted_attributes :
+                extracted_attributes["colors"] = "White"
                 logger.debug(
-                    "[handle_playstation_product] Для заданного 'acs' не найден атрибут 'coloracs', установлено значение 'White'")
+                    "[handle_playstation_product] Для заданного 'acs' не найден атрибут 'colors', установлено значение 'White'")
 
         if not required_attrs :
             logger.info(
@@ -273,8 +279,8 @@ def handle_playstation_product(
                 parts.append(extracted_attributes["acs"])
 
             # Добавляем цвет, если он есть
-            if "coloracs" in extracted_attributes :
-                parts.append(extracted_attributes["coloracs"])
+            if "colors" in extracted_attributes :
+                parts.append(extracted_attributes["colors"])
 
             # Собираем финальное название, разделяя части пробелами
             final_product_name = " ".join(str(part) for part in parts)
