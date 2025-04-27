@@ -10,7 +10,7 @@ CREDENTIALS_FILE = "credentials.json"  # Убедись, что этот фай�
 
 # ID файлов API-ключей на Google Drive
 FILE_IDS = {
-    "dev" : "17wmkEx_aomeLuSoUXzhy96Rt5VRi26Pv",  # ID api_key_dev.txt
+    "dev" : "1TlbpGacps-lv4XUaYMA0etHkOxvsdfl5",  # ID api_key_dev.txt
     "prod" : "1qqyE-IVJKmrS5tQ89aQysI3MCR3eTXO1"  # ID api_key_prod.txt
 }
 
