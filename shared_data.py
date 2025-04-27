@@ -6936,10 +6936,10 @@ PRODUCT_LIBRARY = {
             "aliases" : ["iPhone 16", "16"],
             "attributes" : {
                 "SSD" : {
-                    "values" : ["128", "256"],
                     "aliases" : {
                         "128" : ["128"],
-                        "256" : ["256"]
+                        "256" : ["256"],
+                        "512" : ["512"]
                     },
                 },
                 "color" : {
@@ -8208,7 +8208,7 @@ PRODUCT_LIBRARY = {
                     },
                 },
                 "Cellular" : {
-                    "values" : ["+ Cellular"],
+                    "values" : ["+ LTE"],
                     "aliases" : {
                         "+ Cellular" : ["Cellular", "LTE", "5G"]
                     },
@@ -8254,7 +8254,7 @@ PRODUCT_LIBRARY = {
                     },
                 },
                 "Cellular" : {
-                    "values" : ["+ Cellular"],
+                    "values" : ["+ LTE"],
                     "aliases" : {
                         "+ Cellular" : ["Cellular", "LTE", "5G"]
                     },
@@ -8304,7 +8304,7 @@ PRODUCT_LIBRARY = {
                     },
                 },
                 "Cellular" : {
-                    "values" : ["+ Cellular"],
+                    "values" : ["+ LTE"],
                     "aliases" : {
                         "+ Cellular" : ["Cellular", "LTE", "5G"]
                     },
@@ -8363,7 +8363,7 @@ PRODUCT_LIBRARY = {
                     },
                 },
                 "Cellular" : {
-                    "values" : ["+ Cellular"],
+                    "values" : ["+ LTE"],
                     "aliases" : {
                         "+ Cellular" : ["Cellular", "LTE", "5G"]
                     },
