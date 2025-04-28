@@ -29,6 +29,8 @@ from db_utils import init_db, clear_user_data
 from utils import message_handler
 from sorting_rules import get_sort_key
 from currency_api import BinanceAPI
+from ai_assistant import register_ai_assistant
+
 
 import logging
 logging.basicConfig(
@@ -3968,65 +3970,64 @@ async def catalog_command(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
 
 
 # ------------------------------ MAIN ------------------------------
-async def main():
-    # >>> Новое: инициализируем базу
+async def main() -> None:
+    # ── Инициализируем БД ───────────────────────────────────────────────
     init_db()
 
+    # ── Создаём приложение Telegram-бота ────────────────────────────────
     application = ApplicationBuilder().token(API_TOKEN).build()
 
+    # ── Меню / команды бота ─────────────────────────────────────────────
     commands = [
-        BotCommand(command="start", description="🏁 Запустить бота"),
-        BotCommand(command="best", description="🔥 Лучшие предложения"),
-        BotCommand(command="markup", description="💰 Наценка на товар"),
-        BotCommand(command="gradmark", description="📈 Наценка с градацией"),
-        BotCommand(command="list", description="🔍 Сравнение цен"),
-        BotCommand(command="my_price_list", description="📊 Свой прайс-лист"),
-        BotCommand(command="clear", description="♻️ Очистить список товаров"),
-        BotCommand(command="currency", description="💲️ Курсы валют"),
-        BotCommand(command="help", description="⚙️ Получить справку"),
-        BotCommand(command="restart", description="🛠️️ Сброс всех состояний"),
-        #BotCommand(command="catalog", description="📚 Каталог товаров"),
+        BotCommand("start",         "🏁 Запустить бота"),
+        BotCommand("best",          "🔥 Лучшие предложения"),
+        BotCommand("markup",        "💰 Наценка на товар"),
+        BotCommand("gradmark",      "📈 Наценка с градацией"),
+        BotCommand("list",          "🔍 Сравнение цен"),
+        BotCommand("my_price_list", "📊 Свой прайс-лист"),
+        BotCommand("clear",         "♻️ Очистить список товаров"),
+        BotCommand("currency",      "💲️ Курсы валют"),
+        BotCommand("help",          "⚙️ Получить справку"),
+        BotCommand("restart",       "🛠️ Сброс всех состояний"),
+        # BotCommand("ai_assistant",  "🤖 AI-форматирование прайса (beta)"), ⚒️
+        # BotCommand("catalog", "📚 Каталог товаров"), ⚒️
     ]
     await application.bot.set_my_commands(commands)
 
-    # Команды
-    application.add_handler(CommandHandler("start", start))
-    application.add_handler(CommandHandler("help", help_command))
-    application.add_handler(CommandHandler("best", best_command))
+    # ── Обычные команды ────────────────────────────────────────────────
+    application.add_handler(CommandHandler("start",  start))
+    application.add_handler(CommandHandler("help",   help_command))
+    application.add_handler(CommandHandler("best",   best_command))
     application.add_handler(CommandHandler("restart_price_list", restart_price_list))
-    application.add_handler(CommandHandler("clear", clear_command))
+    application.add_handler(CommandHandler("clear",  clear_command))
     application.add_handler(CommandHandler("currency", currency_command))
     application.add_handler(CommandHandler("restart", restart_all), group=0)
+    # application.add_handler(CommandHandler("catalog", catalog_command)) ⚒️
 
-    # Application.add_handler(CommandHandler("catalog", catalog_command))
+    # ── AI-ассистент (ConversationHandler) ─────────────────────────────
+    # register_ai_assistant(application) ⚒️
 
-    # ConversationHandler для /my_price_list
+    # ── ConversationHandler’ы основных функций ────────────────────────
     application.add_handler(get_my_price_list_conversation_handler())
-
-    # ConversationHandler для /list
     application.add_handler(get_list_conversation_handler())
-
-    # ConversationHandler для /markup
     application.add_handler(get_markup_conversation_handler())
-
-    # ConversationHandler для /gradmark
     application.add_handler(get_gradmark_conversation_handler())
 
-    # callback-хендлеры для /best
-    application.add_handler(CallbackQueryHandler(best_group_callback, pattern=r"^group_"))
-    application.add_handler(CallbackQueryHandler(best_category_callback, pattern=r"^cat_"))
-    application.add_handler(CallbackQueryHandler(best_command_callback, pattern=r"^best_(csv|excel|msg)$"))
-    application.add_handler(CallbackQueryHandler(best_command_comments_callback, pattern=r"^best_msg_comments_"))
-    application.add_handler(CallbackQueryHandler(
-        best_structure_callback,
-        pattern=r"^(structure_grouped|structure_flat)$"
-    ))
+    # ── Callback-хендлеры для /best ────────────────────────────────────
+    application.add_handler(CallbackQueryHandler(best_group_callback,      pattern=r"^group_"))
+    application.add_handler(CallbackQueryHandler(best_category_callback,   pattern=r"^cat_"))
+    application.add_handler(CallbackQueryHandler(best_command_callback,    pattern=r"^best_(csv|excel|msg)$"))
+    application.add_handler(CallbackQueryHandler(best_command_comments_callback,
+                                                 pattern=r"^best_msg_comments_"))
+    application.add_handler(CallbackQueryHandler(best_structure_callback,
+                                                 pattern=r"^(structure_grouped|structure_flat)$"))
 
-    # Общий message_handler
+    # ── Общий обработчик сообщений ─────────────────────────────────────
     application.add_handler(MessageHandler(filters.ALL, message_handler))
 
     print("Бот запущен. Нажмите Ctrl+C для остановки.")
     await application.run_polling()
+
 
 if __name__ == "__main__":
     import asyncio

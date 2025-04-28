@@ -736,7 +736,7 @@ SPECIAL_RULES_IPHONE = {
 
 IGNORING_APPLE_IPHONE_RECOGNITION = [
     # не считаем за apple iphone если содержаться слова
-    "WiFi", "WiFi", "Wi-Fi", "ipad", "mac", "2TB", "3TB", "4TB", "m1",
+    "WiFi", "WiFi", "Wi-Fi", "ipad", "mac", "2TB", "3TB", "4TB", "m1", "LTE",
     "m2", "m3", "m4", "Macbook", "Air",
     "CPU", "GPU", "Xiaomi", "samsung", "note", "Redmi", "pad", "Galaxy", "Pixel", "Doogee", "CMF"
 ]
@@ -808,7 +808,7 @@ IGNORING_APPLE_WATCH_RECOGNITION = [
 # 💻 Специальные правила для Apple Mac 💻>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 IGNORING_APPLE_MAC_RECOGNITION = [
     # не считаем за apple mac если содержаться слова
-    "iPad"
+    "iPad", "Wi-Fi", "LTE", "WIFI", "Pad", "Cellular",
 ]
 
 SPECIAL_ALIASES_FOR_FINAL_PRODUCT_NAME_APPLE_MAC = {
@@ -8171,6 +8171,7 @@ PRODUCT_LIBRARY = {
         "iPad" : {
             "aliases" : [
                 "iPad",
+                "11",
                 "10",
                 "9"
             ],
@@ -8208,9 +8209,9 @@ PRODUCT_LIBRARY = {
                     },
                 },
                 "Cellular" : {
-                    "values" : ["+ LTE"],
+                    "values" : ["LTE"],
                     "aliases" : {
-                        "+ Cellular" : ["Cellular", "LTE", "5G"]
+                        "LTE" : ["Cellular", "LTE", "5G"]
                     },
                 },
             },
@@ -8254,9 +8255,9 @@ PRODUCT_LIBRARY = {
                     },
                 },
                 "Cellular" : {
-                    "values" : ["+ LTE"],
+                    "values" : ["LTE"],
                     "aliases" : {
-                        "+ Cellular" : ["Cellular", "LTE", "5G"]
+                        "LTE" : ["Cellular", "LTE", "5G"]
                     },
                 },
             },
@@ -8304,9 +8305,9 @@ PRODUCT_LIBRARY = {
                     },
                 },
                 "Cellular" : {
-                    "values" : ["+ LTE"],
+                    "values" : ["LTE"],
                     "aliases" : {
-                        "+ Cellular" : ["Cellular", "LTE", "5G"]
+                        "LTE" : ["Cellular", "LTE", "5G"]
                     },
                 },
                 "chip" : {
@@ -8365,7 +8366,7 @@ PRODUCT_LIBRARY = {
                 "Cellular" : {
                     "values" : ["+ LTE"],
                     "aliases" : {
-                        "+ Cellular" : ["Cellular", "LTE", "5G"]
+                        "LTE" : ["Cellular", "LTE", "5G"]
                     },
                 },
                 "chip" : {
