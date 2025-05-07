@@ -29,6 +29,7 @@ from db_utils import init_db, clear_user_data
 from utils import message_handler
 from sorting_rules import get_sort_key
 from currency_api import BinanceAPI
+from ai_assistant import register_ai_assistant
 
 
 import logging
@@ -3989,7 +3990,7 @@ async def main() -> None:
         BotCommand("help",          "⚙️ Получить справку"),
         BotCommand("restart",       "🛠️ Сброс всех состояний"),
         BotCommand("ai_assistant",  "🤖 AI-форматирование прайса (beta)"),
-        # BotCommand("catalog", "📚 Каталог товаров"), ⚒️
+        BotCommand("catalog", "📚 Каталог товаров"),
     ]
     await application.bot.set_my_commands(commands)
 
@@ -4001,7 +4002,7 @@ async def main() -> None:
     application.add_handler(CommandHandler("clear",  clear_command))
     application.add_handler(CommandHandler("currency", currency_command))
     application.add_handler(CommandHandler("restart", restart_all), group=0)
-    # application.add_handler(CommandHandler("catalog", catalog_command)) ⚒️
+    application.add_handler(CommandHandler("catalog", catalog_command))
 
     # ── AI-ассистент (ConversationHandler) ─────────────────────────────
     register_ai_assistant(application)
