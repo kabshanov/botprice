@@ -11,7 +11,7 @@ from googleapiclient.http import MediaFileUpload
 # MySQL конфигурация для создания дампа
 MYSQL_HOST = "localhost"
 MYSQL_USER = "bestprice_user"
-MYSQL_PASSWORD = "your_secure_password"
+MYSQL_PASSWORD = "SECRET"
 MYSQL_DATABASE = "bestprice"
 
 # Директория для временного хранения дампа базы данных
