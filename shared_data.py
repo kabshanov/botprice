@@ -11083,23 +11083,90 @@ PRODUCT_LIBRARY = {
             "attributes" : {
                 "version" : {
                     "aliases" : {
-                        "Marshall Acton II" : ["Marshall Acton II", "Marshall Acton 2"],
-                        "Marshall Acton III" : ["Marshall Acton III", "Marshall Acton 3", "Acton 3"],
-                        "Marshall Stanmore II" : ["Marshall Stanmore II", "Marshall Stanmore 2", "Stanmore 2"],
-                        "Marshall Stanmore III" : ["Marshall Stanmore III", "Marshall Stanmore 3", "Stanmore 3"],
-                        "Marshall Woburn II" : ["Marshall Woburn II", "Marshall Woburn 2"],
-                        "Marshall Woburn III" : ["Marshall Woburn III", "Marshall Woburn 3"],
-                        "Marshall Kilburn II" : ["Marshall Kilburn II", "Marshall Kilburn 2"],
-                        "Marshall Kilburn III" : ["Marshall Kilburn III", "Marshall Kilburn 3"],
-                        "Marshall Stockwell II" : ["Marshall Stockwell II", "Marshall Stockwell 2"],
-                        "Marshall Stockwell III" : ["Marshall Stockwell III", "Marshall Stockwell 3"],
-                        "Marshall Tufton" : ["Marshall Tufton"],
-                        "Marshall Emberton I" : ["Marshall Emberton I", "Marshall Emberton 1", "Marshall Emberton"],
-                        "Marshall Emberton II" : ["Marshall Emberton II", "Marshall Emberton 2"],
-                        "Marshall Emberton III" : ["Marshall Emberton III", "Marshall Emberton 3"],
-                        "Marshall Willen I" : ["Marshall Willen I", "Marshall Willen 1", "Marshall Willen"],
-                        "Marshall Willen II" : ["Marshall Willen II", "Marshall Willen 2"],
-                        "Marshall Middleton" : ["Marshall Middleton"]
+                            "Marshall Acton II": [
+                            "Marshall Acton II", "Marshall Acton 2",                # исходные
+                            "Marshall II Acton", "Marshall 2 Acton", "2 Acton"      # новые
+                        ],
+
+                            "Marshall Acton III": [
+                            "Marshall Acton III", "Marshall Acton 3", "Acton 3",
+                            "Marshall III Acton", "Marshall 3 Acton", "3 Acton"
+                        ],
+
+                            "Marshall Stanmore II": [
+                            "Marshall Stanmore II", "Marshall Stanmore 2", "Stanmore 2",
+                            "Marshall II Stanmore", "Marshall 2 Stanmore", "2 Stanmore"
+                        ],
+
+                            "Marshall Stanmore III": [
+                            "Marshall Stanmore III", "Marshall Stanmore 3", "Stanmore 3",
+                            "Marshall III Stanmore", "Marshall 3 Stanmore", "3 Stanmore"
+                        ],
+
+                            "Marshall Woburn II": [
+                            "Marshall Woburn II", "Marshall Woburn 2",
+                            "Marshall II Woburn", "Marshall 2 Woburn", "2 Woburn"
+                        ],
+
+                            "Marshall Woburn III": [
+                            "Marshall Woburn III", "Marshall Woburn 3",
+                            "Marshall III Woburn", "Marshall 3 Woburn", "3 Woburn"
+                        ],
+
+                         "Marshall Kilburn II": [
+                            "Marshall Kilburn II", "Marshall Kilburn 2",
+                            "Marshall II Kilburn", "Marshall 2 Kilburn", "2 Kilburn"
+                        ],
+
+                            "Marshall Kilburn III": [
+                            "Marshall Kilburn III", "Marshall Kilburn 3",
+                            "Marshall III Kilburn", "Marshall 3 Kilburn", "3 Kilburn"
+                        ],
+
+                            "Marshall Stockwell II": [
+                            "Marshall Stockwell II", "Marshall Stockwell 2",
+                            "Marshall II Stockwell", "Marshall 2 Stockwell", "2 Stockwell"
+                        ],
+
+                            "Marshall Stockwell III": [
+                            "Marshall Stockwell III", "Marshall Stockwell 3",
+                            "Marshall III Stockwell", "Marshall 3 Stockwell", "3 Stockwell"
+                        ],
+
+                        "Marshall Tufton": [
+                            "Marshall Tufton",
+                            "Tufton"
+                        ],
+
+                        "Marshall Emberton I": [
+                            "Marshall Emberton I", "Marshall Emberton 1", "Marshall Emberton",
+                            "Marshall I Emberton", "Marshall 1 Emberton", "1 Emberton"
+                        ],
+
+                        "Marshall Emberton II": [
+                            "Marshall Emberton II", "Marshall Emberton 2",
+                            "Marshall II Emberton", "Marshall 2 Emberton", "2 Emberton"
+                        ],
+
+                        "Marshall Emberton III": [
+                            "Marshall Emberton III", "Marshall Emberton 3",
+                            "Marshall III Emberton", "Marshall 3 Emberton", "3 Emberton"
+                        ],
+
+                        "Marshall Willen I": [
+                            "Marshall Willen I", "Marshall Willen 1", "Marshall Willen",
+                            "Marshall I Willen", "Marshall 1 Willen", "1 Willen"
+                        ],
+
+                        "Marshall Willen II": [
+                            "Marshall Willen II", "Marshall Willen 2",
+                            "Marshall II Willen", "Marshall 2 Willen", "2 Willen"
+                        ],
+
+                        "Marshall Middleton": [
+                            "Marshall Middleton",
+                            "Middleton"
+                        ]
                     },
                 },
                 "color" : {
@@ -11122,19 +11189,55 @@ PRODUCT_LIBRARY = {
             },
         },
         "Наушники Marshall" : {
-            "aliases" : ["Marshall Major", "Marshall Minor", "Marshall Monitor", "Marshall Mode", "Marshall Motif", "Major"],
+            "aliases" : ["Marshall Major", "Marshall Minor", "Marshall Monitor", "Marshall Mode", "Marshall Motif",
+                         "Major", "Minor"],
             "attributes" : {
                 "version" : {
                     "aliases" : {
-                        "Marshall Major IV" : ["Marshall Major IV", "Marshall Major 4", "Major 4"],
-                        "Marshall Major V" : ["Marshall Major V", "Marshall Major 5", "Major 5"],
-                        "Marshall Minor III" : ["Marshall Minor III", "Marshall Minor 3", "Minor 3"],
-                        "Marshall Minor IV" : ["Marshall Minor IV", "Marshall Minor 4", "Minor 4"],
-                        "Marshall Monitor II A.N.C." : ["Marshall Monitor II", "Marshall Monitor 2", "Monitor 2"],
-                        "Marshall Monitor III A.N.C." : ["Marshall Monitor III", "Marshall Monitor 3", "Monitor 3"],
-                        "Marshall Mode II" : ["Marshall Mode II", "Marshall Mode 2", "Mode 2"],
-                        "Marshall Mode III" : ["Marshall Mode III", "Marshall Mode 3", "Mode 3"],
-                        "Marshall Motif II A.N.C." : ["Marshall Motif II", "Marshall Motif 2", "Motif 2"]
+                        "Marshall Major IV": [
+                            "Marshall Major IV", "Marshall Major 4", "Major 4",
+                            "Marshall IV Major", "Marshall 4 Major", "4 Major"
+                        ],
+
+                        "Marshall Major V": [
+                            "Marshall Major V", "Marshall Major 5", "Major 5",
+                            "Marshall V Major", "Marshall 5 Major", "5 Major"
+                        ],
+
+                        "Marshall Minor III": [
+                            "Marshall Minor III", "Marshall Minor 3", "Minor 3",
+                            "Marshall III Minor", "Marshall 3 Minor", "3 Minor"
+                        ],
+
+                        "Marshall Minor IV": [
+                            "Marshall Minor IV", "Marshall Minor 4", "Minor 4",
+                            "Marshall IV Minor", "Marshall 4 Minor", "4 Minor"
+                        ],
+
+                        "Marshall Monitor II A.N.C.": [
+                            "Marshall Monitor II", "Marshall Monitor 2", "Monitor 2",
+                            "Marshall II Monitor", "Marshall 2 Monitor", "2 Monitor"
+                        ],
+
+                        "Marshall Monitor III A.N.C.": [
+                            "Marshall Monitor III", "Marshall Monitor 3", "Monitor 3",
+                            "Marshall III Monitor", "Marshall 3 Monitor", "3 Monitor"
+                        ],
+
+                        "Marshall Mode II": [
+                            "Marshall Mode II", "Marshall Mode 2", "Mode 2",
+                            "Marshall II Mode", "Marshall 2 Mode", "2 Mode"
+                        ],
+
+                        "Marshall Mode III": [
+                            "Marshall Mode III", "Marshall Mode 3", "Mode 3",
+                            "Marshall III Mode", "Marshall 3 Mode", "3 Mode"
+                        ],
+
+                        "Marshall Motif II A.N.C.": [
+                            "Marshall Motif II", "Marshall Motif 2", "Motif 2",
+                            "Marshall II Motif", "Marshall 2 Motif", "2 Motif"
+                        ]
                     },
                 },
                 "color" : {

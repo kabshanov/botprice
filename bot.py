@@ -29,7 +29,6 @@ from db_utils import init_db, clear_user_data
 from utils import message_handler
 from sorting_rules import get_sort_key
 from currency_api import BinanceAPI
-from ai_assistant import register_ai_assistant
 
 
 import logging
