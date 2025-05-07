@@ -4,7 +4,7 @@ from typing import Dict, Any
 from currency_api import CurrencyAPI, ExchangeRateAPI
 
 currency_api_cbr = CurrencyAPI()
-exchange_api = ExchangeRateAPI(api_key="a9bcac2dc59778eb01b5b350")
+exchange_api = ExchangeRateAPI(api_key="SECRET")
 
 # Временное хранилище данных пользователей
 USER_DATA: Dict[int, Dict[str, Any]] = {}
