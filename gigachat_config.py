@@ -4,7 +4,7 @@ import os
 # ——— Ваш Authorization Key из SberStudio ———
 GIGACHAT_AUTH_KEY = os.getenv(
     "GIGACHAT_AUTH_KEY",
-    "Basic MTljYmU2ZDItOTg4Yy00NjczLWIyYTktMTM4Y2I4NzMyM2Q4OjYxZjYwOTA4LTRjMTYtNGI1OS1iN2Q3LTQ0MzNhODNjMGM1Zg=="
+    "Basic SECRET"
 )
 
 # ——— Scope (GIGACHAT_API_PERS,  B2B или CORP) ———
